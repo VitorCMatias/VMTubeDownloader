@@ -1,16 +1,24 @@
 from pytube import YouTube
+import time
+from progress.bar import Bar
+from hurry.filesize import alternative, size
 
 link = 'https://www.youtube.com/watch?v=Kee9Et2j7DA'  # input("Enter the link of YouTube video you want to download:  ")
 yt = YouTube(link)
-
+ys = yt.streams
 print("Title: ", yt.title)
-print("Number of views: ",yt.views)
-print("Length of video: ",yt.length)
+print("Number of views: ", yt.views)
+print("Length of video: ", time.strftime('%H:%M:%S', time.gmtime(yt.length)))
 
-#Getting the highest resolution possible
-ys = yt.streams.get_highest_resolution()
+video_size = ys.first().filesize
+print('File Size: ', size(video_size, system=alternative))
 
-#Starting download
+# Getting the highest resolution possible
+
+
+# Starting download
 print("Downloading...")
-ys.download()
+ys.get_highest_resolution().download()
 print("Download completed!!")
+
+
