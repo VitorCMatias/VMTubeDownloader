@@ -1,4 +1,4 @@
-## VM YouTube Downloader
+## VMTube Downloader
 
 A simple YouTube downloader, made in Python, designed to work at the terminal.
 
