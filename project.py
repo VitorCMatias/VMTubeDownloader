@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
-from pytube.cli import on_progress
-from pytube import YouTube
-import time
-from hurry.filesize import alternative, size
 import sys
+import time
+
+from hurry.filesize import alternative, size
+from pytube import YouTube
+from pytube.cli import on_progress
 
 
 def main():
