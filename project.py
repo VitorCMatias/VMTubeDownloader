@@ -18,6 +18,7 @@ def main():
 
 
 def print_video_information(title, views, video_length, file_size):
+    """Prints the video title, number of views, lengths and its size in MB."""
     print("Title: ", title)
     print("Number of views: ", views)
     print("Length of video: ", time.strftime('%H:%M:%S', time.gmtime(video_length)))
@@ -25,9 +26,9 @@ def print_video_information(title, views, video_length, file_size):
 
 
 def download_video(youtube_stream):
-    # Starting download
+    """Starting download the video, and shows when it is done."""
     youtube_stream.get_highest_resolution().download()
-    print("\nDownload completed!!")
+    print("\nDownload completed!!!")
 
 
 if __name__ == "__main__":
